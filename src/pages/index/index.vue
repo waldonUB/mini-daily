@@ -1,12 +1,26 @@
 <template>
-  <div>
-    <gc-input iconCode="#icon-color_target"></gc-input>
-  </div>
+	<div class="current-box">
+		<section class="cur-header">
+		  <div class="message"></div>
+		  <div class="search">
+			  <gc-input iconCode="#icon-color_target"></gc-input>
+		  </div>
+		  <div class="show-switch"></div>
+		</section>
+		<section class="cur-panel">
+			<!--这里根据时间标签循环，待完善-->
+			<gc-collapse tag="晚间"></gc-collapse>
+		</section>
+		<section class="cur-footer">
+
+		</section>
+	</div>
 </template>
 
 <script>
 import card from '@/components/card'
 import GcInput from '@/components/GcInput'
+import GcCollapse from '@/components/GcCollapse'
 
 export default {
     data () {
@@ -21,7 +35,8 @@ export default {
 
     components: {
         card,
-        GcInput
+        GcInput,
+        GcCollapse
     },
 
     methods: {
@@ -45,55 +60,52 @@ export default {
 }
 </script>
 
-<style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all{
-  width:7.5rem;
-  height:1rem;
-  background-color:blue;
-}
-.all:after{
-  display:block;
-  content:'';
-  clear:both;
-}
-.left{
-  float:left;
-  width:3rem;
-  height:1rem;
-  background-color:red;
-}
-
-.right{
-  float:left;
-  width:4.5rem;
-  height:1rem;
-  background-color:green;
+<style lang="less" scoped>
+.current-box {
+	.cur-header {
+		display: flex;
+		flex-flow: row nowrap;
+		padding: 0 25rpx;
+		box-sizing: border-box;
+		.message {
+			position: relative;
+			flex: 1;
+			&::after {
+				width: 65rpx;
+				height: 65rpx;
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				overflow: hidden;
+				background-image: url('http://ww1.sinaimg.cn/large/00760Iw1gy1g7qn07eu5ij305k05kjrd.jpg');
+				background-size: cover;
+			}
+		}
+		.search {
+			flex: 5;
+		}
+		.show-switch {
+			position: relative;
+			flex: 1;
+			&::after {
+				width: 65rpx;
+				height: 65rpx;
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				overflow: hidden;
+				background-image: url('http://ww1.sinaimg.cn/large/00760Iw1gy1g7qn078ykxj305k05k74c.jpg');
+				background-size: cover;
+			}
+		}
+	}
+	.cur-panel {
+		padding: 0 25rpx;
+		box-sizing: border-box;
+	}
 }
 </style>

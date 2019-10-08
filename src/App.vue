@@ -40,7 +40,7 @@ export default {
   padding: 200rpx 0;
   box-sizing: border-box;
 }
-/* this rule will be remove */ 
+/* this rule will be remove */
 * {
   transition: width 2s;
   -moz-transition: width 2s;
@@ -50,8 +50,6 @@ export default {
 .icon {
   width: 1em;
   height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
   overflow: hidden;
 }
 </style>
