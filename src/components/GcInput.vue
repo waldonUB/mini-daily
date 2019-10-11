@@ -21,7 +21,12 @@ export default {
 
 }
 </script>
-
+<style lang="less">
+	/*这个input-placeholder的样式要去掉scoped才生效*/
+	.input-placeholder {
+		color: rgba(128, 128, 128, 0.5);
+	}
+</style>
 <style lang="less" scoped>
 .input-box {
     position: relative;
@@ -32,9 +37,8 @@ export default {
         border-radius: 8rpx;
 		box-sizing: border-box;
 		padding: 0 55rpx;
-		border: 1rpx solid rgb(237, 241, 242);
-
-    }
+		border: 1rpx solid rgb(66, 184, 131);
+	}
 	.icon {
 		width: 1em;
 		height: 1em;
@@ -57,5 +61,4 @@ export default {
 		z-index: 9;
     }
 }
-
 </style>
