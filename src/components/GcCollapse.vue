@@ -6,8 +6,7 @@
 		  </div>
 		  <div @click="toggle" class="arrow" :class="direction"></div>
 	  </div>
-	  <ul class="content">
-		<!--限制个数为4个，自动换行，试试grid row？-->
+	  <ul v-if="isDown" class="content">
         <li :key="item.key" v-for="item of todoList">
 			<div :data-text="item.label" class="circle-img" :style="{backgroundImage: 'url(' + item.value + ')'}">
 			</div>
@@ -31,12 +30,23 @@
 		},
         data () {
             return {
-                direction: 'left'
+                direction: 'down',
+                isDown: true
             }
         },
 		methods: {
             toggle () {
-                this.direction = this.direction === 'left' ? 'down' : 'left'
+                this.direction = this.direction === 'up' ? 'down' : 'up'
+				this.isDown = this.direction === 'down'
+                // 整个手机的震动反馈
+                // wx.vibrateShort()
+                // wx.vibrateLong()
+                // wx.makePhoneCall({
+                //     phoneNumber: '13724065743'
+                // })
+                // wx.onUserCaptureScreen(function (res) {
+                //     console.log('用户截屏了')
+                // })
 			}
 		}
     }
@@ -73,8 +83,8 @@
 			overflow: hidden;
 			background-image: url('http://ww1.sinaimg.cn/large/00760Iw1gy1g7qn07971ej305k05kdfm.jpg');
 			background-size: cover;
-			&.left {
-				transform: rotate(0deg);
+			&.up {
+				transform: rotate(-90deg);
 				transition: all 0.1s ease-out;
 			}
 			&.down {

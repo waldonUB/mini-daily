@@ -53,8 +53,8 @@ export default {
                 },
                 {
                     key: '5',
-                    value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07i308j305k05kq30.jpg',
-                    label: '听音乐'
+                    value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn078ykxj305k05k74c.jpg',
+                    label: '射击'
                 }
 			]
         }
