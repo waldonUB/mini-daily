@@ -7,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -17,27 +17,27 @@
     "borderStyle": "white",
 
     "list": [{
-      "text": "首页",
+      "text": "Today",
       "pagePath": "pages/index/main",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
+	  "iconPath": "static/tabs/color_calendar.png",
+	  "selectedIconPath": "static/tabs/color_calendar.png"
     }, {
-      "text": "订单",
+      "text": "设置",
       "pagePath": "pages/logs/main",
-      "iconPath": "static/tabs/orders.png",
-      "selectedIconPath": "static/tabs/orders-active.png"
+      "iconPath": "static/tabs/set-color.png",
+      "selectedIconPath": "static/tabs/set-color.png"
     }],
 
     "items": [{
-      "name": "首页",
+      "name": "Today",
       "pagePath": "pages/index/main",
-      "icon": "static/tabs/home.png",
-      "activeIcon": "static/tabs/home-active.png"
+      "icon": "static/tabs/color_calendar.png",
+      "activeIcon": "static/tabs/color_calendar.png"
     }, {
-      "name": "订单",
+      "name": "设置",
       "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
+      "icon": "static/tabs/set-color.png",
+      "activeIcon": "static/tabs/set-color.png"
     }],
     "position": "bottom"
   }

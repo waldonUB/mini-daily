@@ -6,10 +6,13 @@
 		  </div>
 		  <div @click="toggle" class="arrow" :class="direction"></div>
 	  </div>
-	  <div class="content">
+	  <ul class="content">
 		<!--限制个数为4个，自动换行，试试grid row？-->
-
-	  </div>
+        <li :key="item.key" v-for="item of todoList">
+			<div :data-text="item.label" class="circle-img" :style="{backgroundImage: 'url(' + item.value + ')'}">
+			</div>
+		</li>
+	  </ul>
   </div>
 </template>
 
@@ -20,6 +23,10 @@
             tag: {
                 required: true,
                 default: '任意时间'
+			},
+            todoList: {
+                required: true,
+				default: () => []
 			}
 		},
         data () {
@@ -73,6 +80,39 @@
 			&.down {
 				transform: rotate(90deg);
 				transition: all 0.1s ease-out;
+			}
+		}
+	}
+	.content {
+		list-style: none;
+		display: flex;
+		flex-flow: row wrap;
+		box-sizing: border-box;
+		padding: 20rpx 0 50rpx;
+		li {
+			position: relative;
+			padding: 0 0 25% 25%;
+			.circle-img {
+				box-sizing: border-box;
+				position: absolute;
+				left: 30rpx;
+				top: 30rpx;
+				right: 30rpx;
+				bottom: 30rpx;
+				border-radius: 50%;
+				border: 1px solid #333333;
+				background-size: cover;
+				background-position: center;
+				&::after {
+					width: 100%;
+					content: attr(data-text);
+					position: absolute;
+					bottom: -40rpx;
+					text-align: center;
+					font-size: 26rpx;
+					color: rgb(65, 62, 63);
+					font-weight: 600;
+				}
 			}
 		}
 	}

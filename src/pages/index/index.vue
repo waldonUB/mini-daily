@@ -9,10 +9,10 @@
 		</section>
 		<section class="cur-panel">
 			<!--这里根据时间标签循环，待完善-->
-			<gc-collapse tag="晚间"></gc-collapse>
+			<gc-collapse tag="晚间" :todo-list="todoList"></gc-collapse>
+			<gc-collapse tag="晚间" :todo-list="todoList"></gc-collapse>
 		</section>
 		<section class="cur-footer">
-
 		</section>
 	</div>
 </template>
@@ -29,7 +29,34 @@ export default {
             userInfo: {
                 nickName: 'mpvue',
                 avatarUrl: '//mpvue.com/assets/logo.png'
-            }
+            },
+			todoList: [
+				{
+					key: '1',
+					value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07crhjj305k05kmx6.jpg',
+					label: '准备礼物'
+				},
+				{
+					key: '2',
+					value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07c97sj305k05kglm.jpg',
+					label: '看书'
+				},
+                {
+                    key: '3',
+                    value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07i308j305k05kq30.jpg',
+					label: '听音乐'
+                },
+                {
+                    key: '4',
+                    value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07erhoj305k05kgln.jpg',
+					label: '拍照'
+                },
+                {
+                    key: '5',
+                    value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07i308j305k05kq30.jpg',
+                    label: '听音乐'
+                }
+			]
         }
     },
 
@@ -106,6 +133,9 @@ export default {
 	.cur-panel {
 		padding: 0 25rpx;
 		box-sizing: border-box;
+	}
+	// 小程序自带，先不用这个
+	.cur-footer {
 	}
 }
 </style>
