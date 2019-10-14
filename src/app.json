@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/setting/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,7 +22,7 @@
 	  "selectedIconPath": "static/tabs/color_calendar.png"
     }, {
       "text": "设置",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/setting/main",
       "iconPath": "static/tabs/set-color.png",
       "selectedIconPath": "static/tabs/set-color.png"
     }],
@@ -35,7 +34,7 @@
       "activeIcon": "static/tabs/color_calendar.png"
     }, {
       "name": "设置",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/setting/main",
       "icon": "static/tabs/set-color.png",
       "activeIcon": "static/tabs/set-color.png"
     }],
