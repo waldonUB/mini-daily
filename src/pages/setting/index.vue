@@ -9,7 +9,11 @@
 				   @click="changeHeadImg">
 			  </div>
 		  </div>
-		  <div class="func-cards"></div>
+		  <div class="func-cards">
+			  <div class="card-box" v-for="item of funcList" :key="item.key">
+				  <div class="card-img"></div>
+			  </div>
+		  </div>
 	  </div>
 	  <div class="version"></div>
   </div>
@@ -21,7 +25,34 @@
 		data () {
             return {
                 nickname: '未设置昵称',
-				headImg: '//ww1.sinaimg.cn/large/00760Iw1gy1g7xjq1jci2j305k05kt8o.jpg'
+				headImg: '//ww1.sinaimg.cn/large/00760Iw1gy1g7xjq1jci2j305k05kt8o.jpg',
+                funcList: [
+                    {
+                        key: '1',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07crhjj305k05kmx6.jpg',
+                        label: '准备礼物'
+                    },
+                    {
+                        key: '2',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07c97sj305k05kglm.jpg',
+                        label: '看书'
+                    },
+                    {
+                        key: '3',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07i308j305k05kq30.jpg',
+                        label: '听音乐'
+                    },
+                    {
+                        key: '4',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07erhoj305k05kgln.jpg',
+                        label: '拍照'
+                    },
+                    {
+                        key: '5',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn078ykxj305k05k74c.jpg',
+                        label: '射击'
+                    }
+                ]
 			}
 		},
 		methods: {
@@ -37,11 +68,7 @@
                         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
 						console.log(`当前文件路径为：` + res.tempFiles[0].path)
 						// 在手机上显示不出来？
-                        // vm.headImg = res.tempFiles[0].path
-						debugger
-                        vm.setData({
-                            headImg: res.tempFiles[0].path
-                        })
+                        vm.headImg = res.tempFiles[0].path
                     }
                 })
 			}
@@ -66,6 +93,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			margin-bottom: 60rpx;
 			.head-img {
 				width: 140rpx;
 				height: 140rpx;
@@ -82,6 +110,31 @@
 					bottom: -45rpx;
 					font-weight: 600;
 					font-size: 26rpx;
+				}
+			}
+		}
+		.func-cards {
+			box-sizing: border-box;
+			padding: 30rpx 100rpx;
+			display: flex;
+			flex-flow: row wrap;
+			/*每行3个，在每行的中间加两边的margin就可以*/
+			div:nth-child(3n + 2) {
+				margin: 20rpx 5% 0;
+			}
+			.card-box {
+				width: 30%;
+				height: 200rpx;
+				box-sizing: border-box;
+				background-color: rgb(243, 243, 241);
+				border-radius: 8rpx;
+				padding: 20rpx;
+				margin-top: 20rpx;
+				.card-img {
+					padding: 100% 100% 0 0;
+					background-color: #fff;
+
+
 				}
 			}
 		}
