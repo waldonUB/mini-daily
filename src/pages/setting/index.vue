@@ -11,7 +11,7 @@
 		  </div>
 		  <div class="func-cards">
 			  <div class="card-box" v-for="item of funcList" :key="item.key">
-				  <div class="card-img"></div>
+				  <div :data-func="item.label" class="card-img" :style="{backgroundImage: 'url(' + item.value + ')'}"></div>
 			  </div>
 		  </div>
 	  </div>
@@ -51,6 +51,41 @@
                         key: '5',
                         value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn078ykxj305k05k74c.jpg',
                         label: '射击'
+                    },
+                    {
+                        key: '6',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07crhjj305k05kmx6.jpg',
+                        label: '准备礼物'
+                    },
+                    {
+                        key: '7',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07c97sj305k05kglm.jpg',
+                        label: '看书'
+                    },
+                    {
+                        key: '8',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07i308j305k05kq30.jpg',
+                        label: '听音乐'
+                    },
+                    {
+                        key: '9',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07erhoj305k05kgln.jpg',
+                        label: '拍照'
+                    },
+                    {
+                        key: '10',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn078ykxj305k05k74c.jpg',
+                        label: '射击'
+                    },
+                    {
+                        key: '11',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07crhjj305k05kmx6.jpg',
+                        label: '准备礼物'
+                    },
+                    {
+                        key: '12',
+                        value: '//ww1.sinaimg.cn/large/00760Iw1gy1g7qn07c97sj305k05kglm.jpg',
+                        label: '看书'
                     }
                 ]
 			}
@@ -123,18 +158,31 @@
 				margin: 20rpx 5% 0;
 			}
 			.card-box {
+				position: relative;
 				width: 30%;
-				height: 200rpx;
+				height: 165rpx;
 				box-sizing: border-box;
-				background-color: rgb(243, 243, 241);
+				background-color: rgb(255, 255, 255);
 				border-radius: 8rpx;
-				padding: 20rpx;
+				border: 1rpx solid rgb(243, 243, 241);
 				margin-top: 20rpx;
 				.card-img {
-					padding: 100% 100% 0 0;
-					background-color: #fff;
-
-
+					position: absolute;
+					top: 0;
+					left: 20rpx;
+					bottom: 60rpx;
+					right: 20rpx;
+					background-position: center;
+					background-size: cover;
+					&::after {
+						content: attr(data-func);
+						width: 100%;
+						text-align: center;
+						position: absolute;
+						bottom: -30rpx;
+						font-weight: 600;
+						font-size: 26rpx;
+					}
 				}
 			}
 		}
