@@ -1,7 +1,7 @@
 <template>
 	<div class="current-box">
 		<section class="cur-header">
-		  <div class="message"></div>
+		  <div class="message" @click="gotoTest"></div>
 		  <div class="search">
 			  <gc-input iconCode="#icon-color_target"></gc-input>
 		  </div>
@@ -77,8 +77,13 @@ export default {
         },
         clickHandle (ev) {
             console.log('clickHandle:', ev)
-            // throw {message: 'custom test'}
-        }
+            // throw {message: 'custom testp'}
+        },
+        gotoTest () {
+            const url = '../testp/main'
+            // const url = '/pages/setting/main'
+            mpvue.navigateTo({url})
+		}
     },
 
     created () {
